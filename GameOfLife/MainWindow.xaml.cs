@@ -24,5 +24,27 @@ namespace GameOfLife
         {
             InitializeComponent();
         }
+
+        private void StartLife(object sender, RoutedEventArgs e)
+        {
+            int rowsAmount = 47;
+            int columnsAmount = 60;          
+
+            for (int row = 0; row < rowsAmount; row++)
+            {
+                for (int column = 0; column < columnsAmount; column++)
+                {
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.Width = LifeTable.ActualWidth / rowsAmount;
+                    rectangle.Height = LifeTable.ActualHeight / columnsAmount;
+                    rectangle.Fill = Brushes.Black;
+                    LifeTable.Children.Add(rectangle);
+                    Canvas.SetLeft(rectangle, column * rectangle.Width);
+                    Canvas.SetTop(rectangle, row * rectangle.Height);
+                    rectangle.MouseDown += //Minute 28:37 https://www.youtube.com/watch?v=yEjRK54-1EU
+                }
+            }
+
+        }
     }
 }
