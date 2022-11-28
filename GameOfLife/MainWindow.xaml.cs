@@ -29,6 +29,7 @@ namespace GameOfLife
          
         }
 
+        Random randomRectangles = new Random();
         public const int rowsAmount = 200;
         public const int columnsAmount = 200;
         int status = 0;
@@ -47,7 +48,7 @@ namespace GameOfLife
             }
 
         }
-        private void StartLife(object sender, RoutedEventArgs e)
+        private void StartLife(object sender, EventArgs e)
         {
 
 
@@ -58,11 +59,11 @@ namespace GameOfLife
                     Rectangle rectangle = new Rectangle();
                     rectangle.Width = LifeTable.ActualWidth / rowsAmount + 1;
                     rectangle.Height = LifeTable.ActualHeight / columnsAmount + 1;
-                    rectangle.Fill = Brushes.Black;
+                    rectangle.Fill = (randomRectangles.Next(0,2)==1) ? Brushes.Black : Brushes.White;
                     LifeTable.Children.Add(rectangle);
                     Canvas.SetLeft(rectangle, column * rectangle.Width);
                     Canvas.SetTop(rectangle, row * rectangle.Height);
-                    rectangle.MouseDown += RectangleMouseDown;//Minute 1:02:39 https://www.youtube.com/watch?v=yEjRK54-1EU
+                    rectangle.MouseDown += RectangleMouseDown;
 
                     rectanglesField[row, column] = rectangle;
                 }
