@@ -30,8 +30,8 @@ namespace GameOfLife
         }
 
         Random randomRectangles = new Random();
-        public const int rowsAmount = 200;
-        public const int columnsAmount = 200;
+        public const int rowsAmount = 150;
+        public const int columnsAmount = 150;
         int status = 0;
         Rectangle[,] rectanglesField = new Rectangle[rowsAmount, columnsAmount];
         DispatcherTimer tickTimer = new DispatcherTimer();

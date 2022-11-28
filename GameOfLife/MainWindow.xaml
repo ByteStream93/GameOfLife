@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
         Title="MainWindow" Height="1000" Width="1800">
+        
     <Grid>
+        <Canvas Height="1000" Width="1800" Background="Black"/>
         <Canvas x:Name="LifeTable" Height="1000" Width="1600" Background="Black" />
         <Button Width="100" Height="40" Content="Set up" Click="StartLife" Margin="0,111,1700,833"></Button>
         <Button Width="100" Height="40" Content="Go!" Click="StartAnimation" Margin="0,254,1700,690"></Button>
