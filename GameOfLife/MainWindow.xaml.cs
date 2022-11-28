@@ -31,12 +31,21 @@ namespace GameOfLife
 
         public const int rowsAmount = 200;
         public const int columnsAmount = 200;
+        int status = 0;
         Rectangle[,] rectanglesField = new Rectangle[rowsAmount, columnsAmount];
         DispatcherTimer tickTimer = new DispatcherTimer();
 
         private void StartAnimation(object sender, RoutedEventArgs e)
         {
-            tickTimer.Start();
+            if (tickTimer.IsEnabled)
+            {
+                tickTimer.Stop();
+            }
+            else
+            {              
+                tickTimer.Start();
+            }
+
         }
         private void StartLife(object sender, RoutedEventArgs e)
         {

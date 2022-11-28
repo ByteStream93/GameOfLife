@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1000" Width="1800">
     <Grid>
-        <Canvas x:Name="LifeTable" Height="950" Width="1200" />
+        <Canvas x:Name="LifeTable" Height="950" Width="1200" Background="Black" />
         <Button Width="100" Height="40" Content="Play" Click="StartLife" Margin="76,106,1624,838"></Button>
         <Button Width="100" Height="40" Content="Next Step" Click="StartAnimation" Margin="76,253,1624,691"></Button>
     </Grid>
