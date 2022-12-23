@@ -24,6 +24,7 @@ namespace GameOfLife
         public MainWindow()
         {
             InitializeComponent();
+            
             tickTimer.Interval = TimeSpan.FromSeconds(0.1);
             tickTimer.Tick += Step;
          
@@ -32,7 +33,9 @@ namespace GameOfLife
         Random randomRectangles = new Random();
         public const int rowsAmount = 150;
         public const int columnsAmount = 150;
+        
         int status = 0;
+        
         Rectangle[,] rectanglesField = new Rectangle[rowsAmount, columnsAmount];
         DispatcherTimer tickTimer = new DispatcherTimer();
 
@@ -57,10 +60,13 @@ namespace GameOfLife
                 for (int column = 0; column < columnsAmount; column++)
                 {
                     Rectangle rectangle = new Rectangle();
+                    
                     rectangle.Width = LifeTable.ActualWidth / rowsAmount + 1;
                     rectangle.Height = LifeTable.ActualHeight / columnsAmount + 1;
+                    
                     rectangle.Fill = (randomRectangles.Next(0,2)==1) ? Brushes.Black : Brushes.White;
                     LifeTable.Children.Add(rectangle);
+                    
                     Canvas.SetLeft(rectangle, column * rectangle.Width);
                     Canvas.SetTop(rectangle, row * rectangle.Height);
                     rectangle.MouseDown += RectangleMouseDown;
